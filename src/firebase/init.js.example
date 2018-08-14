@@ -1,0 +1,17 @@
+  import firebase from 'firebase'
+  import firestore from 'firebase/firestore'
+  
+  // Initialize Firebase
+  var config = {
+    apiKey: "your api key here",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
+  };
+  const firebaseApp = firebase.initializeApp(config);
+  firebaseApp.firestore().settings({ timestampsInSnapshots: true })
+
+  // Here we export firestore database
+  export default firebaseApp.firestore()
