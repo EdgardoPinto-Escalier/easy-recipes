@@ -4,6 +4,7 @@
       <div class="card-content">
         <h2 class="purple-text">{{ recipe.title }}</h2>
         <ul class="ingredients">
+          <!-- Here we loop through the ingredients using v-for -->
           <li v-for="(ing, index) in recipe.ingredients" :key="index">
             <span class="chip">{{ ing }}</span>
           </li>
@@ -40,5 +41,15 @@ export default {
   font-size: 1.8em;
   text-align: center;
   margin-top: 0px;
+}
+
+.index .ingredients {
+  margin: 30px auto;
+}
+
+.index .ingredients li {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 </style>
