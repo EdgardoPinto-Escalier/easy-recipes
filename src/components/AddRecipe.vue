@@ -4,6 +4,14 @@
 
 <script>
   export default{
-    name: ''
+    name: 'AddRecipe',
+    data(){
+
+    }
   }
 </script>
+
+<style>
+
+</style>
+
