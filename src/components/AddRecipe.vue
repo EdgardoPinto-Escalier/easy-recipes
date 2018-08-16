@@ -1,7 +1,7 @@
 <template>
   <div class="add-recipe container">
     <h2 class="center-align purple-text">ADD NEW RECIPE</h2>
-    <form>
+    <form @submit.prevent="AddRecipe">
       <div class="field title">
         <label for="title">RECIPE TITLE:</label>
         <input type="text" name="title" v-model="title">
@@ -23,6 +23,11 @@
     data(){
       return {
         title: null
+      }
+    },
+    methods: {
+      AddRecipe(){
+        console.log(this.title)
       }
     }
   }
