@@ -7,8 +7,8 @@
         <input type="text" name="title" v-model="title">
       </div>
       <div class="field add-ingredient">
-        <label for="add-ingredient">ADD INGREDIENT</label>
-        <input type="text" name="add-ingredient">
+        <label for="add-ingredient">ADD INGREDIENT:</label>
+        <input type="text" name="add-ingredient" @keydown.tab="addIng" v-model="another">
       </div>
       <div class="field center-align">
         <button class="btn purple">ADD RECIPE</button>
