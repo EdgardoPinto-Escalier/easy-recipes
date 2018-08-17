@@ -22,12 +22,20 @@
     name: 'AddRecipe',
     data(){
       return {
-        title: null
+        title: null,
+        another: null,
+        ingredients: []
       }
     },
     methods: {
       AddRecipe(){
         console.log(this.title)
+      },
+      addIng(){
+        if(this.another){
+          this.ingredients.push(this.another)
+          console.log(this.ingredients)
+        }
       }
     }
   }
