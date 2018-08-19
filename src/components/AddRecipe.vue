@@ -6,6 +6,7 @@
         <label for="title">RECIPE TITLE:</label>
         <input type="text" name="title" v-model="title">
       </div>
+      <div v-for="(ing, index) in ingredients" :key="index"></div>
       <div class="field add-ingredient">
         <label for="add-ingredient">ADD INGREDIENT:</label>
         <input type="text" name="add-ingredient" @keydown.tab.prevent="addIng" v-model="another">
