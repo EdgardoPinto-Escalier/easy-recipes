@@ -40,10 +40,21 @@
     methods: {
       AddRecipe(){
         if (this.title) {
-          this.feedback = null
-          bd.collection('recipes').add({
+          this.feedback = 
+          // Here we create the slug
+          this.slug = slugify(this.title, {
+            replacement: '-',
+            remove: /[$*_+~.()'"!\-:@]/g,
+            lower: true
+          })
+          db.collection('recipes').add({
             title: this.title,
-            ingredients: this.ingredients
+            ingredients: this.ingredients,
+            slug: this.slug
+          }).then(() => {
+            this.$router.push({ name: 'Index'})
+          }).catch(err => {
+            console.log(err)
           })
         } else {
           this.feedback = 'You must enter a recipe title'
