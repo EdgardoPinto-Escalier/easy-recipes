@@ -12,3 +12,5 @@ Simple application made with VueJS and Firebase
 - Materialize CSS Framework
 
 ## Demo
+
+[EASY RECIPES](https://easy-recipes-4a327.firebaseapp.com/#/)
