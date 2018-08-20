@@ -11,6 +11,9 @@
           </li>
         </ul>
       </div>
+      <span class="btn-floating btn-large halfway-fab purple">
+        <router-link :to="{ name: 'EditRecipe', params: {recipe_slug: recipe.slug}}"><i class="material-icons edit">edit</i></router-link>
+      </span>
     </div>
   </div>
 </template>
