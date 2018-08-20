@@ -23,6 +23,9 @@
 </template>
 
 <script>
+  import db from '@/firebase/init'
+  import slugify from 'slugify'
+
   export default{
     name: 'AddRecipe',
     data(){
@@ -30,12 +33,21 @@
         title: null,
         another: null,
         ingredients: [],
-        feedback: null
+        feedback: null,
+        slug: null
       }
     },
     methods: {
       AddRecipe(){
-        console.log(this.title, this.ingredients)
+        if (this.title) {
+          this.feedback = null
+          bd.collection('recipes').add({
+            title: this.title,
+            ingredients: this.ingredients
+          })
+        } else {
+          this.feedback = 'You must enter a recipe title'
+        }
       },
       addIng(){
         if(this.another){
